@@ -1,0 +1,13 @@
+{
+  "name": "serverchatrealtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server Chat Real Time Project",
+  "author": "NguyenDev89",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "socketio-file-upload": "^0.4.4"
+  }
+}
