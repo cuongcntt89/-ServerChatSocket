@@ -37,7 +37,7 @@ MongoClient.connect(url, function (err, db) {
 });
 
 var insertDocument = function (db, callback) {
-    db.collection('Users').insertOne({
+    db.collection('users').insertOne({
         "user_name": "hanv",
         "email": "hanv@gmail.com"
     }, function (err, result) {
@@ -48,7 +48,7 @@ var insertDocument = function (db, callback) {
 };
 
 var validUser = function (db, data, callback) {
-    db.collection('Users').findOne({
+    db.collection('users').findOne({
         "user_name": data.user_name,
         "password": data.password
     }, function (err, doc) {
