@@ -34,7 +34,8 @@ io.sockets.on('connection', function (socket) {
             _id: ObjectID
         };
         connect.collection('logs').insert(log);
-        socket.emit('result', {content : data});
+        // socket.emit('result', {content : data});
+        io.sockets.emit('result', {content : data});
     });
 });
 
