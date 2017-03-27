@@ -28,14 +28,25 @@ app.use(morgan('dev'));
 
 io.sockets.on('connection', function (socket) {
 
+    // socket.on('room', function (room) {
+    //     socket.join(room);
+    // });
+
+    // room = "abc123";
+    // io.sockets.in(room).emit('message', 'what is going on, party people?');
+
+    // io.sockets.in('foobar').emit('message', 'anyone in this room yet?');
+
     socket.on('client-send-message', function (data) {
         var log = {
             content: data,
             _id: ObjectID
         };
         connect.collection('logs').insert(log);
-        // socket.emit('result', {content : data});
-        io.sockets.emit('result', {content : data});
+        socket.emit('result', {content : data});
+        // io.sockets.emit('result', {
+        //     content: data
+        // });
     });
 });
 
